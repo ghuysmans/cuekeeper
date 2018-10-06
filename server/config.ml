@@ -37,7 +37,6 @@ let main =
   foreign
     ~libraries:["irmin.mem"; "tls.mirage"; "mirage-http"]
     ~packages:["irmin"; "tls"; "mirage-http"; "nocrypto"]
-    ~deps:[abstract nocrypto]
     "Unikernel.Main" (stackv4 @-> kv_ro @-> clock @-> job)
 
 let conf = crunch "conf"
