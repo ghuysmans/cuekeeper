@@ -1,0 +1,6 @@
+#!/bin/sh
+echo let lookup = function
+for p in `pwgen -s 32 $1`; do
+	echo "  | \"`echo -n $p |sha1sum |cut -b1-40`\" -> Some \"\" (* $p *)"
+done
+echo "  | _ -> None"
